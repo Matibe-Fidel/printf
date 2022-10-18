@@ -1,8 +1,6 @@
 #include <unistd.h>
 #include "main.h"
-
-#include <unistd.h>
-#include "main.h"
+#include <stdarg.h>
 
 /**
  * _strlen - calculate the lenght of a str
@@ -42,23 +40,4 @@ void _print_str(char *s)
 		_print_char(s[i]);
 	}
 	   
-}
-
-/**
- * _calculate_str_args_len - calculate the number of '%' in a str
- * @s: the string
- * @len: the lenght of s
- * Rteurn: the number of '%'
-*/
-int _calculate_str_args_len(const char *s, int len)
-{
-    int strArgsLen = 0, i;
-
-    for (i = 0; i < len; i++)
-    {
-        if (s[i] == '%' && s[i + 1] == 's')
-            strArgsLen++;
-    }
-
-    return strArgsLen;
 }
