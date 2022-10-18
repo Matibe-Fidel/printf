@@ -9,17 +9,13 @@
 */
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int finish = 0;
-	int numberOfFormat = 0;
-	int numberOfChar = 0;
+	int i = 0, numberOfFormat = 0, numberOfChar = 0;
 	char *tmp;
 
 	va_list args;
-
 	va_start(args, format);
 
-	while (finish == 0)
+	while (i < _strlen(format))
 	{
 		if (format[i] == '%')
 		{
@@ -43,17 +39,12 @@ int _printf(const char *format, ...)
 				numberOfFormat++;
 			}
 			i += 2;
+			continue;
 		}
-		else
-		{
-			_print_char(format[i]);
-			i++;
-		}
-
-		if (i >= _strlen(format))
-			finish = 1;
+		_print_char(format[i]);
+		i++;
 	}
 	va_end(args);
 
-	return (_strlen(format) + numberOfChar - numberOfFormat*2);
+	return (_strlen(format) + numberOfChar - (numberOfFormat * 2));
 }
