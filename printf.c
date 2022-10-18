@@ -1,6 +1,4 @@
 #include <stdarg.h>
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
 
 
@@ -36,6 +34,11 @@ int _printf(const char *format, ...)
                 numberOfChar++;
                 numberOfFormat++;
             }
+            else
+            {
+                /* code */
+            }
+            
             i += 2;
         }
         else
