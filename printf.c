@@ -10,47 +10,27 @@
 */
 int _printf(const char *format, ...)
 {
-    int i = 0, finish = 0, j = 0, *argsLen, numberOfFormat = 0, numberOfCHar = 0;
+    int i = 0;
+    int finish = 0;
+    int numberOfFormat = 0;
+    int numberOfChar = 0;
     va_list args;
-
-    argsLen = malloc(sizeof(int) * _calculate_str_args_len(format, _strlen(format)));
-
-    va_start(args, format);
-    for (i = 0; i < _strlen(format); i++)
-    {
-        if (format[i] == '%')
-        {
-            if (format[i + 1] == 's')
-            {
-                argsLen[j] = _strlen(va_arg(args, char *));
-                numberOfCHar += argsLen[j];
-                numberOfFormat++;
-                j++;
-            }
-            else
-            {
-                va_arg(args, int);
-                numberOfCHar += 1;
-                numberOfFormat++;
-            }
-        }
-    }
-    va_end(args);
     
     va_start(args, format);
-    j = 0;
-    i = 0;
     while (finish == 0)
     {
         if (format[i] == '%')
         {
             if (format[i + 1] == 's')
             {
-                _print_str(va_arg(args, char *), argsLen[j]);
-                j++;
+                _print_str(va_arg(args, char *));
+                numberOfFormat++;
             }
             else if (format[i + 1] == 'c')
+            {
                 _print_char(va_arg(args, int));
+                numberOfFormat++;
+            }
             i += 2;
         }
         else
@@ -64,5 +44,5 @@ int _printf(const char *format, ...)
     }
     va_end(args);
 
-    return (_strlen(format) + numberOfCHar - numberOfFormat*2);
+    return (_strlen(format) + numberOfChar - numberOfFormat*2);
 }

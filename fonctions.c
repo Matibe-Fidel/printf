@@ -1,6 +1,9 @@
 #include <unistd.h>
 #include "main.h"
 
+#include <unistd.h>
+#include "main.h"
+
 /**
  * _strlen - calculate the lenght of a str
  * @s: the string
@@ -17,13 +20,28 @@ int _strlen(const char *s)
 }
 
 /**
+ * _print_char - print a character
+ * @c: the char to printed
+*/
+void _print_char(char c)
+{
+    write(1, &c, 1);
+}
+
+/**
  * _print_str - print a string
  * @s: the string to print
  * @len: the lenght of s
 */
-void _print_str(char *s, int len)
+void _print_str(char *s)
 {
-    write(1, s, len);   
+	int i;
+
+    for (i = 0; i < _strlen(s); i++)
+	{
+		_print_char(s[i]);
+	}
+	   
 }
 
 /**
@@ -43,13 +61,4 @@ int _calculate_str_args_len(const char *s, int len)
     }
 
     return strArgsLen;
-}
-
-/**
- * _print_char - print a character
- * @c: the char to printed
-*/
-void _print_char(char c)
-{
-    write(1, &c, 1);
 }
