@@ -1,6 +1,5 @@
 #include <unistd.h>
 #include "main.h"
-#include <stdarg.h>
 
 /**
  * _strlen - calculate the lenght of a str
@@ -39,5 +38,4 @@ void _print_str(char *s)
 	{
 		_print_char(s[i]);
 	}
-	   
 }
