@@ -8,12 +8,12 @@
 */
 int _strlen(const char *s)
 {
-    int len;
+	int len;
 
-    for (len = 0; s[len] != '\0'; len++)
-        ;
-    
-    return len;
+	for (len = 0; s[len] != '\0'; len++)
+		;
+
+	return (len);
 }
 
 /**
@@ -22,7 +22,7 @@ int _strlen(const char *s)
 */
 void _print_char(char c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }
 
 /**
@@ -34,7 +34,7 @@ void _print_str(char *s)
 {
 	int i;
 
-    for (i = 0; i < _strlen(s); i++)
+	for (i = 0; i < _strlen(s); i++)
 	{
 		_print_char(s[i]);
 	}
