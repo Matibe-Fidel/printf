@@ -1,0 +1,9 @@
+#include "main.h"
+#include <stdio.h>
+
+int main(){
+
+    printf("\n%d", _printf("je code en %s %c", "language", 'c'));
+
+    return 0;
+}
