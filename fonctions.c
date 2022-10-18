@@ -28,7 +28,6 @@ void _print_char(char c)
 /**
  * _print_str - print a string
  * @s: the string to print
- * @len: the lenght of s
 */
 void _print_str(char *s)
 {
