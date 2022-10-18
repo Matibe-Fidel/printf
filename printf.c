@@ -34,11 +34,12 @@ int _printf(const char *format, ...)
                 numberOfChar++;
                 numberOfFormat++;
             }
-            else
+            else if (format[i + 1] == '%')
             {
-                /* code */
+                _print_char('%');
+                numberOfChar++;
+                numberOfFormat++;
             }
-            
             i += 2;
         }
         else
