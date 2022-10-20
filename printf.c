@@ -9,8 +9,7 @@
 */
 int _printf(const char *format, ...)
 {
-	int i = 0, numberOfFormat = 0, numberOfChar = 0;
-	char *tmp;
+	int i = 0, outputLen = _strlen(format);
 
 	va_list args;
 
@@ -21,23 +20,16 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == 's')
-			{
-				tmp = va_arg(args, char *);
-				_print_str(tmp);
-				numberOfChar += _strlen(tmp);
-				numberOfFormat++;
-			}
+				outputLen += _strlen(_print_str(va_arg(args, char *))) - 2;
 			else if (format[i + 1] == 'c')
 			{
 				_print_char(va_arg(args, int));
-				numberOfChar++;
-				numberOfFormat++;
+				outputLen -= 1;
 			}
-			else if (format[i + 1] == '%')
+			else
 			{
-				_print_char('%');
-				numberOfChar++;
-				numberOfFormat++;
+				_print_char(format[i]);
+				_print_char(format[i + 1]);
 			}
 			i += 2;
 			continue;
@@ -47,5 +39,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 
-	return (_strlen(format) + numberOfChar - (numberOfFormat * 2));
+	return (outputLen);
 }

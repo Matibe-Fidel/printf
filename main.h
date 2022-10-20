@@ -3,7 +3,7 @@
 
 int _strlen(const char *s);
 int _printf(const char *format, ...);
-void _print_str(char *s);
+char *_print_str(char *s);
 void _print_char(char s);
 
 #endif          
