@@ -26,11 +26,6 @@ int _printf(const char *format, ...)
 				_print_char(va_arg(args, int));
 				outputLen -= 1;
 			}
-			else if (format[i + 1] == '%')
-			{
-				_print_char('%');
-				outputLen -= 1;
-			}
 			else
 			{
 				_print_char(format[i + 1]);
