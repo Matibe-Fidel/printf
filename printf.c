@@ -9,7 +9,7 @@
 */
 int _printf(const char *format, ...)
 {
-	int i = 0, outputLen = _strlen(format);
+	int i = 0, outputLen = _strlen(format), tmp_nbr;
 
 	va_list args;
 
@@ -26,11 +26,18 @@ int _printf(const char *format, ...)
 				_print_char(va_arg(args, int));
 				outputLen -= 1;
 			}
+			else if (format[i + 1] == 'i' || format[i + 1] == 'd')
+			{
+				tmp_nbr = va_arg(args, int);
+				_print_int(tmp_nbr);
+				outputLen += _int_len(tmp_nbr) - 2;
+			}
 			else if (format[i + 1] == '%')
 			{
 				_print_char('%');
 				outputLen -= 1;
 			}
+			
 			else
 			{
 				_print_char(format[i]);
