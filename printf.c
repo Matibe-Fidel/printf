@@ -34,6 +34,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				_print_char(format[i + 1]);
+				outputLen -= 1;
 			}
 			i += 2;
 			continue;
