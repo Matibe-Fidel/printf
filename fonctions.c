@@ -40,7 +40,7 @@ char *_print_str(char *s)
 
 	for (i = 0; i < _strlen(s); i++)
 	{
-		_print_char(s[i]);
+		_print_char(s[i], 0);
 	}
 
 	return (s);
@@ -77,11 +77,11 @@ void _print_int(int c)
 
 	if (c < 0)
 	{
-		_print_char('-');
+		_print_char('-', 0);
 		i = -i;
 	}
 	if ((i / 10) > 0)
 		_print_int(i / 10);
 
-	 _print_char((i % 10) + '0');
+	 _print_char((i % 10) + '0', 0);
 }
