@@ -28,13 +28,13 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i + 1] == '%')
 			{
-				_print_char(format[i]);
-				_print_char(format[i + 1]);
+				_print_char'%');
+				outputLen -= 1;
 			}
 			else
 			{
+				_print_char(format[i]);
 				_print_char(format[i + 1]);
-				outputLen -= 1;
 			}
 			i += 2;
 			continue;
