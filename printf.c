@@ -9,8 +9,8 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, outputLen = _strlen(format), tmp_nbr;
-
 	va_list args;
+
 	va_start(args, format);
 
 	while (i < _strlen(format))
