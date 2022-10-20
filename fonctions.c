@@ -28,6 +28,7 @@ void _print_char(char c)
 /**
  * _print_str - print a string
  * @s: the string to print
+ * Return: s
 */
 char *_print_str(char *s)
 {
