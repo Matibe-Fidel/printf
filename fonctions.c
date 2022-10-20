@@ -29,7 +29,7 @@ void _print_char(char c)
  * _print_str - print a string
  * @s: the string to print
 */
-void _print_str(char *s)
+char *_print_str(char *s)
 {
 	int i;
 
@@ -37,4 +37,6 @@ void _print_str(char *s)
 	{
 		_print_char(s[i]);
 	}
+
+	return (s);
 }

@@ -6,4 +6,4 @@ int _printf(const char *format, ...);
 char *_print_str(char *s);
 void _print_char(char s);
 
-#endif          
+#endif
