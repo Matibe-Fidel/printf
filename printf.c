@@ -31,13 +31,13 @@ int _printf(const char *format, ...)
 				outputLen -= _print_char('%', 1);
 			else
 			{
-				_print_char(format[i]);
-				_print_char(format[i + 1]);
+				_print_char(format[i], 0);
+				_print_char(format[i + 1], 0);
 			}
 			i += 2;
 			continue;
 		}
-		_print_char(format[i]);
+		_print_char(format[i], 0);
 		i++;
 	}
 	va_end(args);
