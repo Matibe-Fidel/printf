@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 				_print_char('%');
 				outputLen -= 1;
 			}
-			
+
 			else
 			{
 				_print_char(format[i]);

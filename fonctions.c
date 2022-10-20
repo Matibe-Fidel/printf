@@ -28,6 +28,7 @@ void _print_char(char c)
 /**
  * _print_str - print a string
  * @s: the string to print
+ * Return: the lenght of s
 */
 char *_print_str(char *s)
 {
@@ -42,9 +43,9 @@ char *_print_str(char *s)
 }
 
 /**
- * _int_len - calculate the lenght of a str
- * @s: the string
- * Return: the lenght og s
+ * _int_len - calculate the lenght of a integer
+ * @i: the integer
+ * Return: the lenght of i
 */
 int _int_len(int i)
 {
@@ -58,26 +59,25 @@ int _int_len(int i)
 
 	if (i < 0)
 		len++;
-	
-	
+
 	return (len);
 }
 
-/**                                                                                                                                                     
- *print_number - check the code                                                                                                                         
- *@c: the parameter                                                                                                                                     
- */                                                                                                                                                     
-void _print_int(int c)                                                                                                                                
+/**
+ *_print_int - check the code
+ *@c: the parameter
+ */
+void _print_int(int c)
 {
-        unsigned int i = c;
-                                                                                                                                                        
-        if (c < 0)
-        {
-            _print_char('-');
-            i = -i;
-        }
-        if ((i / 10) > 0)
-            _print_int(i / 10);
+	unsigned int i = c;
 
-        _print_char((i % 10) + '0');
+	if (c < 0)
+	{
+		_print_char('-');
+		i = -i;
+	}
+	if ((i / 10) > 0)
+		_print_int(i / 10);
+
+	 _print_char((i % 10) + '0');
 }
