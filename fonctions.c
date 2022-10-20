@@ -19,10 +19,12 @@ int _strlen(const char *s)
 /**
  * _print_char - print a character
  * @c: the char to printed
+ * Return: ...
 */
-void _print_char(char c)
+int _print_char(char c, int i)
 {
 	write(1, &c, 1);
+	return (i);
 }
 
 /**

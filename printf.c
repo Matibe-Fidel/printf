@@ -1,7 +1,6 @@
 #include <stdarg.h>
 #include "main.h"
 
-
 /**
  * _printf - print a string according to a format
  * @format: the format
@@ -12,7 +11,6 @@ int _printf(const char *format, ...)
 	int i = 0, outputLen = _strlen(format), tmp_nbr;
 
 	va_list args;
-
 	va_start(args, format);
 
 	while (i < _strlen(format))
@@ -23,8 +21,7 @@ int _printf(const char *format, ...)
 				outputLen += _strlen(_print_str(va_arg(args, char *))) - 2;
 			else if (format[i + 1] == 'c')
 			{
-				_print_char(va_arg(args, int));
-				outputLen -= 1;
+				outputLen -= _print_char(va_arg(args, int), 1);
 			}
 			else if (format[i + 1] == 'i' || format[i + 1] == 'd')
 			{
@@ -33,11 +30,7 @@ int _printf(const char *format, ...)
 				outputLen += _int_len(tmp_nbr) - 2;
 			}
 			else if (format[i + 1] == '%')
-			{
-				_print_char('%');
-				outputLen -= 1;
-			}
-
+				outputLen -= _print_char('%', 1);
 			else
 			{
 				_print_char(format[i]);
