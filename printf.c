@@ -20,9 +20,7 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == 's')
 				outputLen += _strlen(_print_str(va_arg(args, char *))) - 2;
 			else if (format[i + 1] == 'c')
-			{
 				outputLen -= _print_char(va_arg(args, int), 1);
-			}
 			else if (format[i + 1] == 'i' || format[i + 1] == 'd')
 			{
 				tmp_nbr = va_arg(args, int);
